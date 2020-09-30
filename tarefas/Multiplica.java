@@ -33,16 +33,23 @@ public class Multiplica extends Thread {
                     System.out.println("Parou Aqui: " + this.nome);
                     wait();
                     }
-                    if(fim){
-                        interrupt();
-                        break;
-                    }
                 }
                 
-            } catch (InterruptedException e) {
+                if(fim){
+                    System.out.println("Fechando Thread!!!");
+                    interrupt();
+                    break;
+                }
+
+            }
+            
+            catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
+
+
+            
       }
 
       System.out.println("Fim da thread!!!");
